@@ -36,7 +36,7 @@ class ResultsPage extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 5,
+            flex: 3,
             child: ReusableCard(
               colour: kActiveColor,
               cardChild: Column(
@@ -48,7 +48,11 @@ class ResultsPage extends StatelessWidget {
                     style: kResultTextStyle,
                   ),
                   Text(
-                    bmiResult,
+                    'BMI = $bmiResult',
+                    style: kBMIResultTextStyle,
+                  ),
+                  Text(
+                    'Your body mass index (BMI) is calculated as exactly $bmiResult kilograms per square meter.',
                     style: kBMITextStyle,
                   ),
                   Text(
