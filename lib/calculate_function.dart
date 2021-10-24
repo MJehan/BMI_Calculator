@@ -6,11 +6,28 @@ class CalculatorFunction {
   final int height;
   final int weight;
 
+
+  //double min = 18.5;
+  //double max = 24.9;
   double? _bmi;
+  double? _bmiMaxInterpretation;
+  double? _bmiMinInterpretation;
 
   String calculateBMI() {
     _bmi = weight / pow(height * 0.0254, 2);
     return _bmi!.toStringAsFixed(1);
+  }
+  double minBMIInterpretation(){
+    _bmiMinInterpretation = 18.5 * pow(height * 0.0254, 2);
+    print(_bmiMinInterpretation!.toStringAsFixed(1));
+    return _bmiMinInterpretation!.toDouble();
+
+  }
+
+  String maxBMIInterpretation(){
+    _bmiMaxInterpretation = 24.9 * pow(height * 0.0254, 2);
+    print(_bmiMaxInterpretation);
+    return _bmiMaxInterpretation!.toStringAsFixed(1);
   }
 
   String getResult() {
@@ -36,14 +53,9 @@ class CalculatorFunction {
       return 'Morbidly Obese';
     }
   }
-
   String getInterpretation() {
-    if (_bmi! >= 25) {
-      return 'You have a higher than normal body weight. Try to exercise more.';
-    } else if (_bmi! >= 18.5) {
-      return 'You have a normal body weight. Good job!';
-    } else {
-      return 'You have a lower than normal body weight. You can eat a bit more.';
-    }
+    print(_bmiMaxInterpretation);
+    print(_bmiMinInterpretation);
+    return 'Your Normal Weight Range is $_bmiMinInterpretation kg to $_bmiMaxInterpretation kg';
   }
 }
