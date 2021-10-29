@@ -6,29 +6,19 @@ class CalculatorFunction {
   final int height;
   final int weight;
 
-
-  //double min = 18.5;
-  //double max = 24.9;
+  double minBIM = 18.5;
+  double maxBIM = 24.9;
   double? _bmi;
-  double? _bmiMaxInterpretation;
-  double? _bmiMinInterpretation;
+  int? _bmiMaxInterpretation;
+  int? _bmiMinInterpretation;
 
   String calculateBMI() {
     _bmi = weight / pow(height * 0.0254, 2);
+    _bmiMinInterpretation = (minBIM * pow(height * 0.0254, 2)).toInt();
+    _bmiMaxInterpretation = (maxBIM * pow(height * 0.0254, 2)).toInt();
     return _bmi!.toStringAsFixed(1);
   }
-  double minBMIInterpretation(){
-    _bmiMinInterpretation = 18.5 * pow(height * 0.0254, 2);
-    print(_bmiMinInterpretation!.toStringAsFixed(1));
-    return _bmiMinInterpretation!.toDouble();
 
-  }
-
-  String maxBMIInterpretation(){
-    _bmiMaxInterpretation = 24.9 * pow(height * 0.0254, 2);
-    print(_bmiMaxInterpretation);
-    return _bmiMaxInterpretation!.toStringAsFixed(1);
-  }
 
   String getResult() {
     if (_bmi! < 16.0) {
@@ -54,8 +44,7 @@ class CalculatorFunction {
     }
   }
   String getInterpretation() {
-    print(_bmiMaxInterpretation);
-    print(_bmiMinInterpretation);
     return 'Your Normal Weight Range is $_bmiMinInterpretation kg to $_bmiMaxInterpretation kg';
   }
+
 }

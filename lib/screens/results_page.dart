@@ -20,6 +20,7 @@ class ResultsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('BMI CALCULATOR'),
+        backgroundColor: const Color(0xFF0c6809),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -30,13 +31,13 @@ class ResultsPage extends StatelessWidget {
               padding: const EdgeInsets.all(15.0),
               alignment: Alignment.center,
               child: const Text(
-                'Your Result',
+                'BMI Result',
                 style: kTitleTextStyle,
               ),
             ),
           ),
           Expanded(
-            flex: 3,
+            flex: 6,
             child: ReusableCard(
               colour: kActiveColor,
               cardChild: Column(
@@ -54,6 +55,10 @@ class ResultsPage extends StatelessWidget {
                   Text(
                     'Your body mass index (BMI) is calculated as exactly $bmiResult kilograms per square meter.',
                     style: kBMITextStyle,
+                  ),
+                  const Text(
+                    'Normal BMI Range is 18.5 to 24.9',
+                    style: kMessageTextStyle,
                   ),
                   Text(
                     interpretation,

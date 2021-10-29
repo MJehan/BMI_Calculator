@@ -35,12 +35,16 @@ const kBMIResultTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
 );
 const kBMITextStyle = TextStyle(
-  fontSize: 20.0,
-  fontWeight: FontWeight.bold,
+  fontSize: 18.0,
+  fontWeight: FontWeight.w400,
+);
+const kMessageTextStyle = TextStyle(
+  fontSize: 15.0,
 );
 const kBodyTextStyle = TextStyle(
   fontSize: 22.0,
   fontWeight: FontWeight.bold,
+  color: Colors.red
 );
 const kButtomTExtStyle =  TextStyle(
   fontSize: 18,
