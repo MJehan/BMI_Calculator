@@ -14,6 +14,7 @@ class BMICal extends StatelessWidget {
           scaffoldBackgroundColor: const Color(0xFFffffff),
         ),
       home: const InputPage(),
+      debugShowCheckedModeBanner: false,
       );
     }
 }
